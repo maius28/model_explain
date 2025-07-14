@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+#app {
+  min-height: 100vh;
+  background: #000;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.7);
+}
+
+/* Ant Design 组件样式覆盖 */
+.ant-menu {
+  background: transparent !important;
+}
+
+.ant-menu-item,
+.ant-submenu-title {
+  color: #ffffff !important;
+}
+
+.ant-menu-item:hover,
+.ant-submenu-title:hover {
+  color: #00d4ff !important;
+}
+
+.ant-menu-item-selected {
+  color: #00d4ff !important;
+}
+
+/* 子菜单样式 */
+.ant-menu-submenu {
+  background: transparent !important;
+}
+
+.ant-menu-submenu-popup {
+  background: rgba(0, 0, 0, 0.9) !important;
+  border: 1px solid rgba(0, 212, 255, 0.3) !important;
+  border-radius: 8px !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8) !important;
+}
+
+.ant-menu-submenu-popup .ant-menu-item {
+  color: #ffffff !important;
+  background: transparent !important;
+  border-bottom: none !important;
+  padding: 12px 24px !important;
+  transition: all 0.3s ease;
+}
+
+.ant-menu-submenu-popup .ant-menu-item:hover {
+  color: #00d4ff !important;
+  background: rgba(0, 212, 255, 0.1) !important;
+  border-bottom: none !important;
+}
+
+.ant-menu-submenu-popup .ant-menu-item-selected {
+  color: #00d4ff !important;
+  background: rgba(0, 212, 255, 0.15) !important;
+  border-bottom: none !important;
+}
+
+.ant-select {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.ant-select-selector {
+  background: rgba(0, 0, 0, 0.6) !important;
+  border: 1px solid rgba(0, 212, 255, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.ant-select-focused .ant-select-selector {
+  border-color: #00d4ff !important;
+  box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2) !important;
+}
+
+.ant-select-dropdown {
+  background: rgba(0, 0, 0, 0.9) !important;
+  border: 1px solid rgba(0, 212, 255, 0.3) !important;
+}
+
+.ant-select-item {
+  color: #ffffff !important;
+}
+
+.ant-select-item-option-selected {
+  background: rgba(0, 212, 255, 0.2) !important;
+  color: #00d4ff !important;
+}
+
+.ant-select-item-option-active {
+  background: rgba(0, 212, 255, 0.1) !important;
+}
+
+.ant-input {
+  background: rgba(0, 0, 0, 0.6) !important;
+  border: 1px solid rgba(0, 212, 255, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.ant-input:focus,
+.ant-input-focused {
+  border-color: #00d4ff !important;
+  box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2) !important;
+}
+
+.ant-btn {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.ant-btn-primary {
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3) !important;
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #00b8e6 0%, #0088b3 100%) !important;
+  box-shadow: 0 6px 16px rgba(0, 212, 255, 0.4) !important;
+}
+
+.ant-btn-ghost {
+  border: 1px solid rgba(0, 212, 255, 0.5) !important;
+  color: #00d4ff !important;
+}
+
+.ant-btn-ghost:hover {
+  background: rgba(0, 212, 255, 0.1) !important;
+  border-color: #00d4ff !important;
+}
+
+.ant-checkbox-wrapper {
+  color: #ffffff !important;
+}
+
+.ant-checkbox-inner {
+  background: rgba(0, 0, 0, 0.6) !important;
+  border: 1px solid rgba(0, 212, 255, 0.3) !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background: #00d4ff !important;
+  border-color: #00d4ff !important;
+}
+
+.ant-form-item-label > label {
+  color: #00d4ff !important;
+  font-weight: 500 !important;
+}
+
+/* 动画效果 */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 212, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 212, 255, 0.3);
+  }
+}
+
+.tech-card {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .system-title {
+    font-size: 20px;
+  }
+  
+  .main-menu {
+    width: 100%;
+  }
+}
