@@ -166,122 +166,6 @@ onMounted(() => {
   progressStarted.value = false
   showResult.value = false
 })
-
-const activeTab = ref('accuracy')
-const selectedModel = ref('alexnet')
-const selectedDataset = ref('imagenet')
-const analysisTypes = ref(['accuracy'])
-
-const threeContainer = ref<HTMLElement | null>(null)
-const showThree = ref(false)
-
-function showThreeVisualization() {
-  showThree.value = true
-  nextTick(() => {
-    if (threeContainer.value) {
-      // 清空容器
-      threeContainer.value.innerHTML = ''
-      // 初始化 three.js 场景
-      const scene = new THREE.Scene()
-      const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000)
-      camera.position.set(0, 0, 60)
-      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
-      renderer.setSize(300, 260)
-      threeContainer.value.appendChild(renderer.domElement)
-
-      // 生成模拟特征图数据
-      const depth = 8 // 层数
-      const width = 24 // 每层宽
-      const height = 16 // 每层高
-      for (let d = 0; d < depth; d++) {
-        for (let y = 0; y < height; y++) {
-          for (let x = 0; x < width; x++) {
-            // 随机颜色，实际可用模型数据映射
-            const value = Math.random()
-            const color = new THREE.Color().setHSL(0.3 + 0.7 * value, 1, 0.5)
-            const geometry = new THREE.PlaneGeometry(0.9, 0.9)
-            const material = new THREE.MeshBasicMaterial({ color, side: THREE.DoubleSide })
-            const mesh = new THREE.Mesh(geometry, material)
-            mesh.position.set(
-              x - width / 2,
-              y - height / 2,
-              d * 1.2
-            )
-            scene.add(mesh)
-          }
-        }
-      }
-
-      // 灯光
-      const light = new THREE.AmbientLight(0xffffff, 1)
-      scene.add(light)
-
-      // 动画
-      function animate() {
-        scene.rotation.z += 0.002
-        scene.rotation.x += 0.001
-        renderer.render(scene, camera)
-        requestAnimationFrame(animate)
-      }
-      animate()
-    }
-  })
-}
-
-const columns = [
-  {
-    title: '模型',
-    dataIndex: 'model',
-    key: 'model',
-  },
-  {
-    title: '准确率',
-    dataIndex: 'accuracy',
-    key: 'accuracy',
-  },
-  {
-    title: '推理时间(ms)',
-    dataIndex: 'inferenceTime',
-    key: 'inferenceTime',
-  },
-  {
-    title: '参数量',
-    dataIndex: 'parameters',
-    key: 'parameters',
-  },
-  {
-    title: '内存使用(MB)',
-    dataIndex: 'memory',
-    key: 'memory',
-  },
-]
-
-const dataSource = [
-  {
-    key: '1',
-    model: 'AlexNet',
-    accuracy: '95.8%',
-    inferenceTime: '12.5',
-    parameters: '138M',
-    memory: '256',
-  },
-  {
-    key: '2',
-    model: 'VGG',
-    accuracy: '97.2%',
-    inferenceTime: '18.3',
-    parameters: '245M',
-    memory: '384',
-  },
-  {
-    key: '3',
-    model: 'ResNet',
-    accuracy: '98.1%',
-    inferenceTime: '22.7',
-    parameters: '512M',
-    memory: '512',
-  },
-]
 </script>
 
 <style scoped>
@@ -384,14 +268,6 @@ const dataSource = [
   background: rgba(0, 212, 255, 0.1);
 }
 
-.three-container {
-  width: 300px;
-  height: 260px;
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
-  background: transparent;
-}
 .analysis-main-content {
   min-height: 400px;
   display: flex;
