@@ -1,0 +1,16 @@
+# netlify.toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# 确保 HTML 文件保持正确的 MIME 类型
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+
+# 修复可能的错误映射
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat.html"  # 确保 HTML 文件路径不被改变
+  status = 200

@@ -1,0 +1,22 @@
+
+1:04:23 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+
+  VITE v6.3.5  ready in 405 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  Vue DevTools: Open http://localhost:5173/__devtools__/ as a separate window
+  ➜  Vue DevTools: Press Option(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools
+  ➜  press h + enter to show help
+orange@orangedeMac-mini model_explain % git push --set-upstream master main
+Enumerating objects: 39, done.
+Counting objects: 100% (39/39), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (34/34), done.
+Writing objects: 100% (39/39), 3.68 MiB | 2.26 MiB/s, done.
+Total 39 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/maius28/model_explain
+ * [new branch]      main -> main
+branch 'main' set up to track 'master/main'[A
+
